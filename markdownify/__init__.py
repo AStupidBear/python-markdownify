@@ -426,7 +426,7 @@ class MarkdownConverter(object):
             # print empty headline above this row
             overline += '| ' + ' | '.join([''] * len(cells)) + ' |' + '\n'
             overline += '| ' + ' | '.join(['---'] * len(cells)) + ' |' + '\n'
-        return overline + '|' + text + '\n' + underline
+        return overline + '|' + text.replace("\n", " ") + '\n' + underline
 
 
 def markdownify(html, **options):
